@@ -29,7 +29,7 @@ describe('button', () => {
     it('should render a button with hello text', () => {
       const button = render(VirgoButton, {
         props: {
-          text: 'Hello'
+          text: 'Hello',
         },
       })
 

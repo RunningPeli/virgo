@@ -16,6 +16,9 @@
   },
   "keywords": [],
   "scripts": {
+    "build": "pnpm --filter './packages/**' prepack",
+    "test": "pnpm --filter './packages/**' run test",
+    "typecheck": "pnpm --filter './packages/**' run typecheck",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
