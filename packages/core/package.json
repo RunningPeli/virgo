@@ -7,9 +7,13 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs"
     },
-    "./resolver": { 
-      "types": "./dist/resolver.d.ts", 
+    "./resolver": {
+      "types": "./dist/resolver.d.ts",
       "import": "./dist/resolver.mjs"
+    },
+    "./nuxt": {
+      "types": "./dist/nuxt.d.ts",
+      "import": "./dist/nuxt.mjs"
     }
   },
   "main": "./dist/index.mjs",
@@ -27,6 +31,8 @@
     "vue": "3.5.13"
   },
   "devDependencies": {
+    "@nuxt/kit": "3.16.0",
+    "@nuxt/schema": "3.16.0",
     "@testing-library/vue": "8.1.0",
     "@types/node": "22.13.10",
     "@vitejs/plugin-vue": "5.2.1",

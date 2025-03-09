@@ -19,11 +19,12 @@ export default defineConfig({
       fileName: (_, name) => `${name}.mjs`,
       entry: {
         index: resolve(__dirname, 'src/index.ts'),
-        resolver: resolve(__dirname, 'src/resolver.ts'), 
+        resolver: resolve(__dirname, 'src/resolver.ts'),
+        nuxt: resolve(__dirname, 'src/nuxt.ts'), 
       },
     },
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', '@nuxt/kit'],
     },
   },
   test: {
