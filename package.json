@@ -20,11 +20,15 @@
     "test": "pnpm --filter './packages/**' run test",
     "typecheck": "pnpm --filter './packages/**' run typecheck",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "release": "pnpm run lint && pnpm run typecheck && pnpm run test && changelogen --output CHANGELOG.md && jiti scripts/release.ts && pnpm -r run release:publish && git push --follow-tags"
   },
   "devDependencies": {
     "@antfu/eslint-config": "4.8.1",
+    "bumpp": "^10.0.3",
+    "changelogen": "^0.6.1",
     "eslint": "9.21.0",
+    "jiti": "^2.4.2",
     "typescript": "5.8.2"
   }
 }
