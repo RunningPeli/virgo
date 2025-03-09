@@ -19,6 +19,7 @@ export default defineConfig({
       fileName: (_, name) => `${name}.mjs`,
       entry: {
         index: resolve(__dirname, 'src/index.ts'),
+        resolver: resolve(__dirname, 'src/resolver.ts'), 
       },
     },
     rollupOptions: {

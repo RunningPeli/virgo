@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { VirgoButton } from '@runningpeli/virgo'
 </script>
 
 <template>
