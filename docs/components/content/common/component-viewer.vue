@@ -1,3 +1,12 @@
+<script setup lang="ts">
+interface Props {
+  componentName?: string
+}
+
+// Define props for the component
+defineProps<Props>()
+</script>
+
 <template>
   <client-only>
     <suspense>
@@ -12,12 +21,3 @@
     </suspense>
   </client-only>
 </template>
-
-<script setup lang="ts">
-interface Props {
-  componentName?: string;
-}
-
-// Define props for the component
-defineProps<Props>();
-</script>
