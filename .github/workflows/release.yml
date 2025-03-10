@@ -15,7 +15,7 @@ jobs:
       - name: Setup (Install node & pnpm)
         uses: ./.github/actions/setup
 
-      - name: Build (if needed)
+      - name: Release to pnpm
         run: pnpm release
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -27,7 +27,7 @@
     "lint:fix": "eslint --fix .",
     "clean-dist": "rimraf packages/*/dist",
     "clean-node-modules": "rimraf --glob '**/node_modules'",
-    "release": "pnpm run lint && pnpm run typecheck && pnpm run test && changelogen --output CHANGELOG.md && jiti scripts/release.ts && pnpm -r run release:publish && git push --follow-tags"
+    "release": "pnpm run lint && pnpm run typecheck && pnpm run test && changelogen --output CHANGELOG.md && pnpm -r run release:publish"
   },
   "devDependencies": {
     "@antfu/eslint-config": "4.8.1",
