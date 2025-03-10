@@ -16,7 +16,6 @@
   },
   "keywords": [],
   "scripts": {
-    "install:packages": "pnpm --filter './packages/**' install",
     "build": "pnpm --filter './packages/**' prepack",
     "test": "pnpm --filter './packages/**' run test",
     "typecheck": "pnpm --filter './packages/**' run typecheck",
