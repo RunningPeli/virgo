@@ -1,6 +1,51 @@
+<script lang="ts" setup>
+const isDark = computed(() => useColorMode().value === 'dark')
+
+const features = [
+  {
+    title: 'Vue and Nuxt Native',
+    description:
+      'Build apps that integrate seamlessly with Vue.js and Nuxt.js, leveraging their full potential for a modern development experience.',
+    icon: 'lucide:code-2',
+  },
+  {
+    title: 'Customizable Components',
+    description:
+      'Virgo is framework independent. Every component is designed to be flexible and adaptable to your design system, allowing complete customization with ease.',
+    icon: 'lucide:sliders',
+  },
+  {
+    title: 'Tailwind CSS Support',
+    description:
+      'Utility-first styling made easy with built-in Tailwind CSS support, speeding up your development process.',
+    icon: 'lucide:wind',
+  },
+  {
+    title: 'Unstyled',
+    description:
+      'Virgo components come unstyled by default, giving you the freedom to design your UI without any constraints. But if you prefer, you can use the provided styles.',
+    icon: 'lucide:book-dashed',
+  },
+  {
+    title: 'Performant and Lightweight',
+    description:
+      'Optimized for speed, Virgo\'s components ensure fast loading times and a smooth user experience across all devices.',
+    icon: 'lucide:zap',
+  },
+  {
+    title: 'Accessible',
+    description:
+      'Built with accessibility in mind, Virgo components follow best practices to ensure your applications are usable by everyone.',
+    icon: 'lucide:eye-off',
+  },
+]
+</script>
+
 <template>
   <section class="mx-auto flex max-w-7xl flex-col items-center justify-center">
-    <div class="mb-6 py-12 text-5xl font-semibold">Features</div>
+    <div class="mb-6 py-12 text-5xl font-semibold">
+      Features
+    </div>
     <span class="flex flex-row flex-wrap items-center justify-center gap-6">
       <client-only>
         <card-spotlight
@@ -28,46 +73,3 @@
     </span>
   </section>
 </template>
-
-<script lang="ts" setup>
-const isDark = computed(() => useColorMode().value == "dark");
-
-const features = [
-  {
-    title: "Vue and Nuxt Native",
-    description:
-      "Build apps that integrate seamlessly with Vue.js and Nuxt.js, leveraging their full potential for a modern development experience.",
-    icon: "lucide:code-2",
-  },
-  {
-    title: "Customizable Components",
-    description:
-      "Virgo is framework independent. Every component is designed to be flexible and adaptable to your design system, allowing complete customization with ease.",
-    icon: "lucide:sliders",
-  },
-  {
-    title: "Tailwind CSS Support",
-    description:
-      "Utility-first styling made easy with built-in Tailwind CSS support, speeding up your development process.",
-    icon: "lucide:wind",
-  },
-  {
-    title: "Unstyled",
-    description:
-      "Virgo components come unstyled by default, giving you the freedom to design your UI without any constraints. But if you prefer, you can use the provided styles.",
-    icon: "lucide:book-dashed",
-  },
-  {
-    title: "Performant and Lightweight",
-    description:
-      "Optimized for speed, Virgo's components ensure fast loading times and a smooth user experience across all devices.",
-    icon: "lucide:zap",
-  },
-  {
-    title: "Accessible",
-    description:
-      "Built with accessibility in mind, Virgo components follow best practices to ensure your applications are usable by everyone.",
-    icon: "lucide:eye-off",
-  },
-];
-</script>

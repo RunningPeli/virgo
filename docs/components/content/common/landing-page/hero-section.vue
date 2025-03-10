@@ -5,7 +5,7 @@
     <img src="/logo.png" class="max-w-[300px] p-10" alt="">
     <span
       class="fixed top-0 z-[-1] h-screen w-full bg-white opacity-40 dark:bg-black dark:opacity-50"
-    ></span>
+    />
     <nuxt-link
       to="/getting-started/installation"
       target=""
@@ -28,12 +28,12 @@
     <h1
       class="text-center text-3xl font-bold leading-tight tracking-tighter lg:leading-[1.1] md:text-6xl"
     >
-      Build    
-        <flip-words
-          :words="['beautiful', 'stunning']"
-          :duration="3000"
-        />
-        interface using Virgo
+      Build
+      <flip-words
+        :words="['beautiful', 'stunning']"
+        :duration="3000"
+      />
+      interface using Virgo
     </h1>
 
     <span class="mt-4 text-center text-lg text-gray-600 sm:text-xl dark:text-gray-200">
@@ -59,7 +59,3 @@
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-const isDark = computed(() => useColorMode().value == "dark");
-</script>

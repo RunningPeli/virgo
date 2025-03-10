@@ -1,3 +1,18 @@
+<script lang="ts" setup>
+interface Props {
+  componentName?: string
+  id?: string
+  type?: string
+  label?: string
+  class?: string
+  icon?: string
+}
+
+withDefaults(defineProps<Props>(), {
+  icon: 'lucide:square-terminal',
+})
+</script>
+
 <template>
   <div class="my-4 w-full space-y-8">
     <client-only>
@@ -16,18 +31,3 @@
     </client-only>
   </div>
 </template>
-
-<script lang="ts" setup>
-interface Props {
-  componentName?: string;
-  id?: string;
-  type?: string;
-  label?: string;
-  class?: string;
-  icon?: string;
-}
-
-withDefaults(defineProps<Props>(), {
-  icon: "lucide:square-terminal",
-});
-</script>
