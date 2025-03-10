@@ -1,0 +1,49 @@
+{
+  "name": "@runningpeli/virgo",
+  "type": "module",
+  "version": "0.0.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./resolver": {
+      "types": "./dist/resolver.d.ts",
+      "import": "./dist/resolver.mjs"
+    },
+    "./nuxt": {
+      "types": "./dist/nuxt.d.ts",
+      "import": "./dist/nuxt.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "typecheck": "vue-tsc -p tsconfig.app.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepack": "pnpm run build",
+    "release:publish": "pnpm publish --access public --no-git-checks"
+  },
+  "peerDependencies": {
+    "vue": "3.5.13"
+  },
+  "devDependencies": {
+    "@nuxt/kit": "3.16.0",
+    "@nuxt/schema": "3.16.0",
+    "@testing-library/vue": "8.1.0",
+    "@types/node": "22.13.10",
+    "@vitejs/plugin-vue": "5.2.1",
+    "@vue/tsconfig": "0.7.0",
+    "jsdom": "26.0.0",
+    "typescript": "5.8.2",
+    "unplugin-vue-components": "^28.4.1",
+    "vite": "6.2.1",
+    "vite-plugin-dts": "4.5.3",
+    "vitest": "3.0.8",
+    "vue": "3.5.13",
+    "vue-tsc": "2.2.8"
+  }
+}

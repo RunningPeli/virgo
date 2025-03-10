@@ -1,0 +1,25 @@
+{
+  "name": "@runningpeli/virgo-docs",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/image": "1.9.0",
+    "@nuxt/scripts": "0.11.1",
+    "@vueuse/core": "13.0.0",
+    "highlight.js": "11.11.1",
+    "nuxt": "3.16.0",
+    "shadcn-docs-nuxt": "0.8.20",
+    "vue": "3.5.13",
+    "vue-router": "4.5.0"
+  },
+  "devDependencies": {
+    "@iconify-json/vscode-icons": "1.2.16"
+  }
+}
