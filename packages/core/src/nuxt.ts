@@ -18,7 +18,7 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {
     prefix: '',
   },
-  async setup(options, nuxt) {
+  async setup(options) {
     for (const component of components) {
       addComponent({
         name: `${options.prefix}${component}`,

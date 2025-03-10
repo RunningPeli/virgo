@@ -20,7 +20,7 @@ export default defineConfig({
       entry: {
         index: resolve(__dirname, 'src/index.ts'),
         resolver: resolve(__dirname, 'src/resolver.ts'),
-        nuxt: resolve(__dirname, 'src/nuxt.ts'), 
+        nuxt: resolve(__dirname, 'src/nuxt.ts'),
       },
     },
     rollupOptions: {
