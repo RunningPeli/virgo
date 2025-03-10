@@ -15,9 +15,6 @@ jobs:
       - name: Setup (Install node & pnpm)
         uses: ./.github/actions/setup
 
-      - name: Install dependencies
-        run: pnpm ci
-
       - name: Build (if needed)
         run: pnpm release
         env:
