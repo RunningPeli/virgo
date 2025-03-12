@@ -125,13 +125,13 @@ async function groupByCategory() {
                   <div class="mr-2 font-heading">
                     {{ component.title }}
                   </div>
-                  <Badge
+                  <badge
                     v-for="badge in component.navBadges"
                     :key="`${badge}_${component.title}_${index}`"
                     :type="badge.type"
                   >
                     {{ badge.value }}
-                  </Badge>
+                  </badge>
                   <span class="flex flex-1" />
                   <span> View → </span>
                 </div>

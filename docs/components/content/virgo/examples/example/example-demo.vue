@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { VirgoButton } from '@runningpeli/virgo'
 import { ref } from 'vue'
 
 // State
@@ -22,7 +23,8 @@ function reset() {
   <div class="counter-example">
     <h3>Counter Example</h3>
     <p>Current count: {{ count }}</p>
-    <div class="buttons">
+    <div class="buttons space-x-3">
+      <virgo-button text="Virgo Button here!" @click="increment" />
       <ui-button @click="increment">
         Increment
       </ui-button>
