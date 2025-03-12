@@ -17,6 +17,8 @@
   },
   "keywords": [],
   "scripts": {
+    "install-deps": "pnpx jiti scripts/install.ts",
+    "install-deps:frozen": "pnpx jiti scripts/install.ts --frozen-lockfile",
     "bootstrap": "pnpx jiti scripts/bootstrap.ts",
     "clean": "pnpx jiti scripts/clean.ts --all",
     "dev": "pnpm --filter \"./packages/**\" run dev",
