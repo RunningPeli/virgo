@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxt/image', '@nuxt/scripts'],
+  modules: ['@nuxt/image', '@nuxt/scripts', '@runningpeli/virgo/nuxt'],
   components: [
     {
       path: '~/components',
