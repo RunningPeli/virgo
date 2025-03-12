@@ -54,7 +54,7 @@ function setupDocumentation(): ChildProcess {
   }
 
   console.log('📚 Starting documentation dev mode...')
-  const env = { ...process.env, NODE_ENV: 'development' };
+  const env = { ...process.env, NODE_ENV: 'development' }
   const docsProcess = spawn('pnpm', ['dev:docs'], {
     stdio: 'inherit',
     shell: true,
