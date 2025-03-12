@@ -23,8 +23,8 @@ function reset() {
   <div class="counter-example">
     <h3>Counter Example</h3>
     <p>Current count: {{ count }}</p>
-    <div class="buttons">
-      <VirgoButton text="Virgo Button here!" @click="increment" />
+    <div class="buttons space-x-3">
+      <virgo-button text="Virgo Button here!" @click="increment" />
       <ui-button @click="increment">
         Increment
       </ui-button>
