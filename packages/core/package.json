@@ -2,6 +2,36 @@
   "name": "@runningpeli/virgo",
   "type": "module",
   "version": "0.0.0",
+  "description": "Offering a collection of reusable components and a unique control for enhanced customization.",
+  "author": "RunningPeli",
+  "license": "MIT",
+  "homepage": "https://virgo-ui.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RunningPeli/virgo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RunningPeli/virgo/issues"
+  },
+  "keywords": [
+    "virgo",
+    "virgo-ui",
+    "unstyled",
+    "accessible",
+    "headless",
+    "runningpeli",
+    "nuxt-module",
+    "nuxt",
+    "nuxt3",
+    "vue",
+    "vue3",
+    "ui",
+    "components",
+    "ui-library",
+    "customizable",
+    "design-system",
+    "typescript"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
