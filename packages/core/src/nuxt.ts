@@ -1,11 +1,9 @@
 import type { } from '@nuxt/schema' // Mandatory to avoid a bug when building
 import { addComponent, defineNuxtModule } from '@nuxt/kit'
 
-import { components } from './components'
+import virgoButton from './components/button/virgo-button.vue';
 
-export interface ModuleOptions {
-  prefix: string
-}
+export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -15,16 +13,18 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt: '>=3.0.0',
     },
   },
-  defaults: {
-    prefix: '',
-  },
+  defaults: {},
   async setup(options) {
-    for (const component of components) {
-      addComponent({
-        name: `${options.prefix}${component}`,
-        export: component,
-        filePath: '@runningpeli/virgo',
-      })
-    }
+    console.log(`[ virgo ] Nuxt module setup with options:`, JSON.stringify(options, null, 2));
+    
+    // add virgo button
+    addComponent({
+      name: 'VirgoButton',
+      export: 'VirgoButton',
+      filePath: '@runningpeli/virgo',
+    })
+     
+    console.log('[ virgo ] module setup complete with components:', 'VirgoButton');
+    console.log(`[ virgo ] Total components added:`, 1);
   },
 })

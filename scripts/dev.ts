@@ -65,6 +65,48 @@ function setupDocumentation(): ChildProcess {
   return docsProcess
 }
 
+function startVuePlayground(): ChildProcess {
+  console.log('🚀 Setting up Vue playground...')
+  try {
+    execSync('pnpm --filter playground-vue install', { stdio: 'inherit' })
+  }
+  catch (error) {
+    throw new Error(`Failed to install Vue playground dependencies: ${error}`)
+  }
+
+  console.log('🎮 Starting Vue playground dev mode...')
+  const env = { ...process.env, NODE_ENV: 'development' }
+  const playgroundProcess = spawn('pnpm', ['--filter', 'playground-vue', 'dev'], {
+    stdio: 'inherit',
+    shell: true,
+    env,
+  })
+
+  activeProcesses.push(playgroundProcess)
+  return playgroundProcess
+}
+
+function startNuxtPlayground(): ChildProcess {
+  console.log('🚀 Setting up Nuxt playground...')
+  try {
+    execSync('pnpm --filter playground-nuxt install', { stdio: 'inherit' })
+  }
+  catch (error) {
+    throw new Error(`Failed to install Nuxt playground dependencies: ${error}`)
+  }
+
+  console.log('🎮 Starting Nuxt playground dev mode...')
+  const env = { ...process.env, NODE_ENV: 'development' }
+  const playgroundProcess = spawn('pnpm', ['--filter', 'playground-nuxt', 'dev'], {
+    stdio: 'inherit',
+    shell: true,
+    env,
+  })
+
+  activeProcesses.push(playgroundProcess)
+  return playgroundProcess
+}
+
 function setupCleanup(): void {
   process.on('SIGINT', () => {
     console.log('👋 Shutting down all processes...')
@@ -75,28 +117,49 @@ function setupCleanup(): void {
   process.stdin.resume()
 }
 
-async function bootstrap(): Promise<void> {
-  console.log('🚀 Bootstrapping project...')
+function parseArgs(): { vue: boolean; nuxt: boolean; docs: boolean } {
+  const args = process.argv.slice(2)
+  return {
+    vue: args.includes('--vue'),
+    nuxt: args.includes('--nuxt'),
+    docs: args.includes('--docs') || (!args.includes('--vue') && !args.includes('--nuxt')),
+  }
+}
 
+async function dev(): Promise<void> {
+  console.log('🚀 Starting development environment...')
+  
+  const args = parseArgs()
+  
   try {
     installDependencies()
 
     await startPackageWatcher()
 
-    setupDocumentation()
+    if (args.docs) {
+      setupDocumentation()
+    }
 
-    console.log('✅ Bootstrap complete! All processes are now running.')
+    if (args.vue) {
+      startVuePlayground()
+    }
+
+    if (args.nuxt) {
+      startNuxtPlayground()
+    }
+
+    console.log('✅ Development environment ready!')
     console.log('   Press Ctrl+C to stop all processes.')
     setupCleanup()
   }
   catch (error) {
-    console.error('❌ Bootstrap failed:', error)
+    console.error('❌ Dev setup failed:', error)
     activeProcesses.forEach(proc => proc.kill())
     process.exit(1)
   }
 }
 
-bootstrap().catch((error) => {
-  console.error('❌ Unhandled error during bootstrap:', error)
+dev().catch((error) => {
+  console.error('❌ Unhandled error during development setup:', error)
   process.exit(1)
 })
