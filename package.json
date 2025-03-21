@@ -19,9 +19,11 @@
   "scripts": {
     "install-deps": "pnpx jiti scripts/install.ts",
     "install-deps:frozen": "pnpx jiti scripts/install.ts --frozen-lockfile",
-    "bootstrap": "pnpx jiti scripts/bootstrap.ts",
     "clean": "pnpx jiti scripts/clean.ts --all",
-    "dev": "pnpm --filter \"./packages/**\" run dev",
+    "dev": "pnpx jiti scripts/dev.ts",
+    "dev:vue": "pnpx jiti scripts/dev.ts --vue",
+    "dev:nuxt": "pnpx jiti scripts/dev.ts --nuxt",
+    "dev:all": "pnpx jiti scripts/dev.ts --vue --nuxt --docs",
     "watch": "pnpm --filter \"./packages/**\" run watch",
     "dev:docs": "pnpm --filter @runningpeli/virgo-docs run dev",
     "build": "pnpm --filter \"./packages/**\" prepack",
