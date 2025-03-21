@@ -1,7 +1,7 @@
 import type { } from '@nuxt/schema' // Mandatory to avoid a bug when building
-import { addComponent, defineNuxtModule } from '@nuxt/kit'
+import { addComponent, defineNuxtModule, useLogger } from '@nuxt/kit'
 
-import { componentList } from './component-list';
+import { componentList } from './component-list'
 
 export interface ModuleOptions {}
 
@@ -15,8 +15,9 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {},
   async setup(options) {
-    console.log(`[ virgo ] Nuxt module setup with options:`, JSON.stringify(options, null, 2));
-    
+    const logger = useLogger(' virgo ')
+    logger.info(`Nuxt module setup with options:`, JSON.stringify(options, null, 2))
+
     componentList.forEach((component) => {
       addComponent({
         name: component,
@@ -24,7 +25,7 @@ export default defineNuxtModule<ModuleOptions>({
         filePath: '@runningpeli/virgo',
       })
     })
-    console.log(`[ virgo ] module setup complete with components:`, componentList.join(', '));
-    console.log(`[ virgo ] Total components added:`, componentList.length);
+    logger.info(`module setup complete with components:`, componentList.join(', '))
+    logger.info(`Total components added:`, componentList.length)
   },
 })

@@ -117,7 +117,7 @@ function setupCleanup(): void {
   process.stdin.resume()
 }
 
-function parseArgs(): { vue: boolean; nuxt: boolean; docs: boolean } {
+function parseArgs(): { vue: boolean, nuxt: boolean, docs: boolean } {
   const args = process.argv.slice(2)
   return {
     vue: args.includes('--vue'),
@@ -128,9 +128,9 @@ function parseArgs(): { vue: boolean; nuxt: boolean; docs: boolean } {
 
 async function dev(): Promise<void> {
   console.log('🚀 Starting development environment...')
-  
+
   const args = parseArgs()
-  
+
   try {
     installDependencies()
 

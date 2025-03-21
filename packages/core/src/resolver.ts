@@ -3,17 +3,16 @@ import { componentList } from './component-list'
 
 export interface ResolverOptions {}
 
-export default function (options: ResolverOptions = {}): ComponentResolver {
-
+export default function (/* options: ResolverOptions = {} */): ComponentResolver {
   return {
     type: 'component',
     resolve: (name: string) => {
       if (componentList.includes(name)) {
         return {
-          name: name,
+          name,
           from: '@runningpeli/virgo',
         }
       }
-    }
+    },
   }
 }
