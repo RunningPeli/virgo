@@ -1,28 +1,16 @@
 import type { ComponentResolver } from 'unplugin-vue-components'
-import { components } from './components'
+import { componentList } from './component-list'
 
-export interface ResolverOptions {
-  /**
-   * prefix for components used in templates
-   *
-   * @defaultValue ""
-   */
-  prefix?: string
-}
+export interface ResolverOptions {}
 
-export default function (options: ResolverOptions = {}): ComponentResolver {
-  const { prefix = '' } = options
-
+export default function (/* options: ResolverOptions = {} */): ComponentResolver {
   return {
     type: 'component',
     resolve: (name: string) => {
-      if (name.toLowerCase().startsWith(prefix.toLowerCase())) {
-        const componentName = name.substring(prefix.length)
-        if (components.includes(componentName)) {
-          return {
-            name: componentName,
-            from: '@runningpeli/virgo',
-          }
+      if (componentList.includes(name)) {
+        return {
+          name,
+          from: '@runningpeli/virgo',
         }
       }
     },

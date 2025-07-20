@@ -5,6 +5,6 @@ import { cwd } from 'node:process'
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['../../packages/core/src/nuxt.ts'],
+  modules: ['../../packages/core/src/nuxt.ts', '@nuxtjs/tailwindcss'],
   alias: { '@runningpeli/virgo': resolve(cwd(), '../../packages/core/src/index.ts') },
 })
